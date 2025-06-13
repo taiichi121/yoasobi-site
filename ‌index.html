@@ -7,9 +7,7 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
-  <!-- 导航栏 -->
-  <header>
+<header>
     <nav>
       <ul>
         <li><a href="‌index.html">ホーム</a></li>
@@ -20,32 +18,22 @@
       </ul>
     </nav>
   </header>
-
-  <!-- 主视觉 -->
-  <section class="hero">
+<section class="hero">
   <div class="hero-content">
     <h1 id="typing-title"></h1>
     <p id="typing-subtitle"></p >
     <button class="more-btn" id="moreBtn">もっと知る</button>
-
-    
-  </div>
+</div>
 </section>
-
-    
-
-  <!-- 底部版权 -->
-  <footer>
+<footer>
     <p>&copy; 2025 YOASOBI Fansite. All rights reserved.</p >
   </footer>
-
-  <!-- 动画脚本 -->
-  <script src="js/main.js"></script>
+<script src="js/main.js"></script>
 <script>
   window.addEventListener("load", () => {
     document.body.classList.add("loaded");
 
-    // 打字动画
+   
     setTimeout(() => {
       typeLine("typing-title", "YOASOBI", () => {
         typeLine("typing-subtitle", "小説を音楽にするユニット", () => {
@@ -56,11 +44,11 @@
       });
     }, 800);
 
-    // ✅ 替换按钮点击为“淡出后跳转”
+    
     document.getElementById("moreBtn").addEventListener("click", () => {
       document.body.classList.add("fade-out");
       setTimeout(() => {
-        window.location.href = "news.html"; // 目标页面
+        window.location.href = "news.html"; 
       }, 800);
     });
   });
