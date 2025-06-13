@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact - YOASOBI Fan Site</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/contact-style.css">
+</head>
+<body>
+
+  <!-- 导航栏 -->
+  <header>
+    <nav>
+      <ul>
+        <li><a href="‌index.html">ホーム</a></li>
+        <li><a href="about.html">YOASOBIについて</a></li>
+        <li><a href="songs.html">楽曲</a></li>
+        <li><a href="mv.html">MV</a></li>
+        <li><a href="contact.html">連絡先</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- 联系页面 -->
+  <section class="contact-page">
+    <h1>お問い合わせ</h1>
+    <p>YOASOBIへの応援メッセージ・ご感想など、ぜひお寄せください。</p >
+
+    <form class="contact-form" action="https://formspree.io/f/mqabqyqa" method="POST">
+      <input type="text" name="name" placeholder="お名前（Name）" required>
+      <input type="email" name="email" placeholder="メールアドレス（Email）" required>
+      <textarea name="message" placeholder="メッセージを入力してください（Message）" required></textarea>
+      <button type="submit">送信（Send）</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 YOASOBI Fansite. All rights reserved.</p >
+  </footer>
+
+<script>
+  window.addEventListener('load', () => {
+    document.body.classList.add('loaded');
+  });
+</script></body>
+</html>

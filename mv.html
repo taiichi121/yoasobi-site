@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>YOASOBI MV 一覧</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/mv-style.css">
+<script>
+  window.addEventListener("load", () => {
+    document.body.classList.add("loaded");
+  });
+</script></head>
+<body>
+
+  <header>
+    <nav>
+      <ul>
+        <li><a href="‌index.html">ホーム</a></li>
+        <li><a href="about.html">YOASOBIについて</a></li>
+        <li><a href="songs.html">楽曲</a></li>
+        <li><a href="mv.html">MV</a></li>
+        <li><a href="contact.html">連絡先</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="mv-page">
+    <h1 class="mv-title">YOASOBI MV 一覧</h1>
+
+    <!-- 夜に駆ける -->
+    <div class="mv-section mv-left">
+      <div class="mv-info">
+        <h2>夜に駆ける</h2>
+        <p>YOASOBI のデビュー曲。原作『タナトスの誘惑』。</p >
+      </div>
+      <div class="video-wrapper" data-bvid="BV1Ph411C7S5" data-cover="images/yorunikakeru.jpg">
+        <div class="play-overlay">▶ 点击播放</div>
+      </div>
+    </div>
+
+    <!-- アイドル -->
+    <div class="mv-section mv-right">
+      <div class="mv-info">
+        <h2>アイドル (Idol)</h2>
+        <p>『【推しの子】』OP。社会現象級の大ヒット。</p >
+      </div>
+      <div class="video-wrapper" data-bvid="BV17h4y1p7AD" data-cover="images/idol-cover.jpg">
+        <div class="play-overlay">▶ 点击播放</div>
+      </div>
+    </div>
+
+    <!-- HEART BEAT -->
+    <div class="mv-section mv-left">
+      <div class="mv-info">
+        <h2>HEART BEAT</h2>
+        <p>JRAコラボ。鼓动感のある爽やかチューン。</p >
+      </div>
+      <div class="video-wrapper" data-bvid="BV12N4y1z73t" data-cover="images/heartbeat-cover.jpg">
+        <div class="play-overlay">▶ 点击播放</div>
+      </div>
+    </div>
+
+    <!-- 三原色 -->
+    <div class="mv-section mv-right">
+      <div class="mv-info">
+        <h2>三原色</h2>
+        <p>Google Pixel CMソング。三色の世界観。</p >
+      </div>
+      <div class="video-wrapper" data-bvid="BV1qv41137oN" data-cover="images/rgb-cover.jpg">
+        <div class="play-overlay">▶ 点击播放</div>
+      </div>
+    </div>
+
+    <!-- 怪物 -->
+    <div class="mv-section mv-left">
+      <div class="mv-info">
+        <h2>怪物</h2>
+        <p>『BEASTARS』OP。圧巻のアニメーション。</p >
+      </div>
+      <div class="video-wrapper" data-bvid="BV1bV411B7uK" data-cover="images/monster-cover.jpg">
+        <div class="play-overlay">▶ 点击播放</div>
+      </div>
+    </div>
+
+    <!-- 群青 -->
+    <div class="mv-section mv-right">
+      <div class="mv-info">
+        <h2>群青</h2>
+        <p>ブルボンCM。青春応援ソング。</p >
+      </div>
+      <div class="video-wrapper" data-bvid="BV1984y1F7Bv" data-cover="images/gunjo-cover.jpg">
+        <div class="play-overlay">▶ 点击播放</div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2025 YOASOBI Fansite. All rights reserved.</p >
+  </footer>
+
+  <!-- 播放器脚本（封面控制） -->
+  <script>
+    window.addEventListener("DOMContentLoaded", function () {
+      document.querySelectorAll('.video-wrapper').forEach(wrapper => {
+        const cover = wrapper.getAttribute('data-cover');
+        if (cover) {
+          wrapper.style.backgroundImage = `url('${cover}')`;
+        }
+
+        wrapper.addEventListener('click', () => {
+          const bvid = wrapper.getAttribute('data-bvid');
+          const iframe = document.createElement('iframe');
+          iframe.src = `https://player.bilibili.com/player.html?bvid=${bvid}&high_quality=1&danmaku=0`;
+          iframe.setAttribute('allowfullscreen', 'true');
+          iframe.style.width = '100%';
+          iframe.style.height = '100%';
+          iframe.frameBorder = '0';
+          wrapper.innerHTML = '';
+          wrapper.style.backgroundImage = 'none';
+          wrapper.appendChild(iframe);
+        });
+      });
+    });
+  </script>
+</body>
+</html>

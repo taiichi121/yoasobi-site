@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>YOASOBI  Fan Site</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- 导航栏 -->
+  <header>
+    <nav>
+      <ul>
+        <li><a href="‌index.html">ホーム</a></li>
+        <li><a href="about.html">YOASOBIについて</a></li>
+        <li><a href="songs.html">楽曲</a></li>
+        <li><a href="mv.html">MV</a></li>
+        <li><a href="contact.html">連絡先</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- 主视觉 -->
+  <section class="hero">
+  <div class="hero-content">
+    <h1 id="typing-title"></h1>
+    <p id="typing-subtitle"></p >
+    <button class="more-btn" id="moreBtn">もっと知る</button>
+
+    
+  </div>
+</section>
+
+    
+
+  <!-- 底部版权 -->
+  <footer>
+    <p>&copy; 2025 YOASOBI Fansite. All rights reserved.</p >
+  </footer>
+
+  <!-- 动画脚本 -->
+  <script src="js/main.js"></script>
+<script>
+  window.addEventListener("load", () => {
+    document.body.classList.add("loaded");
+
+    // 打字动画
+    setTimeout(() => {
+      typeLine("typing-title", "YOASOBI", () => {
+        typeLine("typing-subtitle", "小説を音楽にするユニット", () => {
+          const btn = document.getElementById("moreBtn");
+          btn.style.opacity = "1";
+          btn.style.transform = "translateY(0)";
+        });
+      });
+    }, 800);
+
+    // ✅ 替换按钮点击为“淡出后跳转”
+    document.getElementById("moreBtn").addEventListener("click", () => {
+      document.body.classList.add("fade-out");
+      setTimeout(() => {
+        window.location.href = "news.html"; // 目标页面
+      }, 800);
+    });
+  });
+
+  // 打字函数
+  function typeLine(id, text, callback) {
+    const el = document.getElementById(id);
+    el.classList.add("type-line");
+    el.textContent = "";
+    let i = 0;
+    const timer = setInterval(() => {
+      el.textContent += text.charAt(i);
+      i++;
+      if (i >= text.length) {
+        clearInterval(timer);
+        el.classList.remove("type-line");
+        if (callback) callback();
+      }
+    }, 150);
+  }
+</script>
+<script>
+  window.addEventListener("load", () => {
+    document.body.classList.add("loaded");
+  });
+</script><script>document.getElementById("moreBtn").addEventListener("click", () => {
+  const btn = document.getElementById("moreBtn");
+  document.body.classList.remove("loaded"); // 开始淡出
+  setTimeout(() => {
+    window.location.href = "news.html"; // 跳转
+  }, 800); // 时间要和 CSS 中的 transition 保持一致
+});</script></body>
+</html>

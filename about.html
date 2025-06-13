@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>YOASOBIについて</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<!-- ナビゲーション -->
+<header>
+  <nav>
+    <ul>
+      <li><a href="‌index.html">ホーム</a></li>
+      <li><a href="about.html">YOASOBIについて</a></li>
+      <li><a href="songs.html">楽曲</a></li>
+      <li><a href="mv.html">MV</a></li>
+      <li><a href="contact.html">連絡先</a></li>
+    </ul>
+  </nav>
+</header>
+<main class="about-page">
+  <section class="about-hero">
+    <h1>YOASOBIについて</h1>
+    <p>YOASOBI（ヨアソビ）は、「小説を音楽にする」ユニットとして、日本中に旋風を巻き起こした存在です。</p >
+  </section>
+  <section class="about-content">
+    <h2>ユニット紹介</h2>
+    <p>YOASOBI は、作詞作曲担当の <strong>Ayase</strong> と、ボーカル担当の <strong>ikura（幾田りら）</strong> の二人から成る音楽ユニットです。</p >
+    <p>彼らの楽曲は全て「小説」が原作となっており、物語と音楽の融合というユニークなスタイルが、若者を中心に圧倒的な支持を得ています。</p >
+    <h2>メンバー紹介</h2>
+    <ul>
+      <li><strong>Ayase：</strong>ボカロP出身。繊細かつドラマティックな音楽制作を得意とし、YOASOBIのすべての楽曲を手がけています。</li>
+      <li><strong>ikura（幾田りら）：</strong>透き通る歌声と豊かな表現力で物語の世界観を歌に乗せて届ける、実力派シンガーソングライター。</li>
+    </ul>
+   <section class="carousel-container">
+  <div class="carousel-slide">
+    <img src="images/yoasobi-1.jpg" alt="YOASOBI 1">
+    <img src="images/yoasobi-2.jpg" alt="YOASOBI 2">
+    <img src="images/yoasobi-3.jpg" alt="YOASOBI 3">
+    <img src="images/yoasobi-4.jpg" alt="YOASOBI 4">
+  </div>
+</section>
+    <h2>創作のテーマ</h2>
+    <p>YOASOBI の楽曲は、現代を生きる人々の「感情」や「孤独」、「希望」を小説を通じて描き、音楽へと昇華しています。歌詞には文学的な深さがあり、聴くたびに新しい発見があります。</p >
+    <h2>代表曲</h2>
+    <ul>
+      <li>夜に駆ける（Ayase原作『タナトスの誘惑』）</li>
+      <li>群青（原作：ブルーピリオド）</li>
+      <li>ハルジオン、怪物、たぶん、三原色……など多数</li>
+    </ul>
+    <div class="about-image"> <img src="images/yoasobi-about.jpg" alt="YOASOBIユニット写真" /> </div>
+    <p>YOASOBIは単なる音楽ユニットではなく、現代の物語を音楽という形で再構築し、世界中に届ける「音の文学者」です。</p >
+  </section>
+</main>
+<footer>
+  <p>&copy; 2025 YOASOBI Fansite. All rights reserved.</p >
+</footer>
+<script src="js/main.js"></script><script>
+  const slide = document.querySelector('.carousel-slide');
+  const images = document.querySelectorAll('.carousel-slide img');
+  let currentIndex = 0;
+
+  function showSlide(index) {
+    const offset = -index * 1000; // 每次移动 900px
+    slide.style.transform = `translateX(${offset}px)`;
+  }
+
+  function nextSlide() {
+    currentIndex = (currentIndex + 1) % images.length;
+    showSlide(currentIndex);
+  }
+
+  // 每隔 4 秒切换一张图
+  setInterval(nextSlide, 4000);
+</script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+body {
+  font-family: 'Helvetica Neue', sans-serif;
+  background: linear-gradient(to right, #1a1a2e, #16213e);
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+
+nav {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 15px 30px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 999;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center; /* 居中对齐 */
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+  font-size: 16px;
+}
+
+nav ul li a:hover {
+  color: #ff4081;
+}
+
+
+.news-page {
+  padding: 120px 20px 60px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.news-page h1 {
+  font-size: 48px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.news-list article {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-left: 4px solid #ff4081;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+
+.news-list h3 {
+  margin: 0 0 10px;
+  color: #ff4081;
+}
+
+.news-list p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #111;
+  font-size: 14px;
+}
+body {
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+body.loaded {
+  opacity: 1;
+}
+/* === 渐入动画 === */
+.news-list article {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.6s ease forwards;
+}
+
+/* 设置每条的渐次延迟 */
+.news-list article:nth-child(1) { animation-delay: 0.1s; }
+.news-list article:nth-child(2) { animation-delay: 0.2s; }
+.news-list article:nth-child(3) { animation-delay: 0.3s; }
+.news-list article:nth-child(4) { animation-delay: 0.4s; }
+.news-list article:nth-child(5) { animation-delay: 0.5s; }
+.news-list article:nth-child(6) { animation-delay: 0.6s; }
+.news-list article:nth-child(7) { animation-delay: 0.7s; }
+.news-list article:nth-child(8) { animation-delay: 0.8s; }
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
